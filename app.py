@@ -52,10 +52,10 @@ HEX_COORDS = {
     "CA": (1.5, 5), "AZ": (2.5, 5), "UT": (3.5, 5), "KS": (4.5, 5),
     "AR": (5.5, 5), "TN": (6.5, 5), "VA": (7.5, 5), "NC": (8.5, 5),
     "DC": (9.5, 5),
-    "NM": (2.5, 6), "OK": (3.5, 6), "LA": (4.5, 6), "MS": (5.5, 6),
-    "AL": (6.5, 6), "SC": (7.5, 6),
-    "TX": (3.5, 7), "GA": (7.0, 7),
-    "HI": (0.0, 8), "FL": (7.5, 8),
+    "NM": (3.0, 6), "OK": (4.0, 6), "LA": (5.0, 6), "MS": (6.0, 6),
+    "AL": (7.0, 6), "SC": (8.0, 6),
+    "TX": (3.5, 7), "GA": (7.5, 7),
+    "HI": (0.0, 8), "FL": (8.0, 8),
 }
 
 
@@ -378,7 +378,7 @@ def make_hex_map(df, selected_state=None):
     for state, (col, row) in HEX_COORDS.items():
         # Pointy-top grid spacing with a small, consistent white gutter.
         x = col * 0.80
-        y = -row * 0.70
+        y = -row * 0.72
         opened = int(grouped.loc[state, "Open"]) if state in grouped.index and "Open" in grouped.columns else 0
         closed = int(grouped.loc[state, "Closed"]) if state in grouped.index and "Closed" in grouped.columns else 0
         selected = state == selected_state
@@ -414,7 +414,7 @@ def make_hex_map(df, selected_state=None):
         **chart_layout(margin=dict(l=4, r=4, t=8, b=4)),
         shapes=shapes,
         xaxis=dict(visible=False, range=[-0.8, 9.8], fixedrange=True),
-        yaxis=dict(visible=False, range=[-6.0, 0.65], scaleanchor="x", scaleratio=1, fixedrange=True),
+        yaxis=dict(visible=False, range=[-6.65, 0.65], scaleanchor="x", scaleratio=1, fixedrange=True),
     )
     return fig
 

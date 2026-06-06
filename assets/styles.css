@@ -74,7 +74,11 @@ body {
 .open-number { color: var(--coral); }
 .total-number { color: var(--text); }
 
-.filters { padding: 5px 0 0; }
+.filters {
+  position: relative;
+  z-index: 20;
+  padding: 5px 0 0;
+}
 
 .filters label {
   display: block;
@@ -129,6 +133,48 @@ body {
 .dash-dropdown-grid-container {
   min-height: 26px !important;
   padding: 2px 7px !important;
+}
+
+.dash-dropdown-content {
+  z-index: 1000 !important;
+  background: #fff !important;
+  overflow: hidden !important;
+  box-shadow: 0 5px 14px rgba(120, 120, 120, 0.14);
+}
+
+.dash-dropdown-search-container {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 3 !important;
+  margin: 0 !important;
+  padding: 8px 10px 10px !important;
+  border-bottom: 1px solid #eeeeee;
+  border-radius: 0 !important;
+  background: #fff !important;
+}
+
+.dash-dropdown-search {
+  min-height: 30px;
+  padding: 3px 6px !important;
+  border: 1px solid var(--axis) !important;
+  border-radius: 3px !important;
+  background: #fff !important;
+  line-height: 22px !important;
+}
+
+.dash-dropdown-options {
+  position: relative;
+  z-index: 1;
+  max-height: 235px;
+  padding-top: 2px;
+  background: #fff;
+}
+
+.dash-dropdown-option {
+  min-height: 38px;
+  padding: 10px 14px !important;
+  background: #fff;
+  font-size: 11px;
 }
 
 #date-range > input,
@@ -232,6 +278,8 @@ body {
 #clear-filters:hover { border-color: var(--teal); color: #73b8c2; }
 
 .chart-grid {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 34px 42px;
