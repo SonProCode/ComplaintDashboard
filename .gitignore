@@ -3,4 +3,3 @@ __pycache__/
 .venv/
 venv/
 .env
-26k-consumer-complaints.csv
